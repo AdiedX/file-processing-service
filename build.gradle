@@ -1,0 +1,43 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.8'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'com.rokt.api'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.11.0'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'junit:junit:4.13.1'
+}
+
+//sourceSets {
+//	integrationTest {
+//		java.srcDir file('src/test/java')
+//	}
+//}
+
+//ext {
+//	integrationTest = project.hasProperty('integrationTest')
+//}
+
+//
+//tasks.register('integrationTest', Test) {
+//	if (integrationTest) {
+//		testClassesDirs = sourceSets.integrationTest.output.classesDirs
+//		classpath = sourceSets.integrationTest.runtimeClasspath
+//	}
+//}
+
+tasks.withType(Jar).configureEach {
+	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
