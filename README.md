@@ -7,8 +7,6 @@ This application processes text files containing entries of the following format
 [Date in YYYY-MM-DDThh:mm:ssZ Format][space][Email Address][space][Session Id in GUID format]
 ```
 
-(Please see instructions.md for more details.)
-
 ### Code Structure
 `/controller` - Controllers are responsible for handling HTTP requests
 
@@ -26,6 +24,12 @@ new BufferedReader(new InputStreamReader(Files.newInputStream(path)))
     .parallel()
 ```
 
+### Build & Run
+`./build.sh`
+
+`./run.sh`
+
+
 ### Testing
-Integration tests are written covering the numerous test cases required in the instructions.md file.
+Integration tests are written covering the numerous test cases.
 Since there are no external data sources being utilized, unit tests are not required.
